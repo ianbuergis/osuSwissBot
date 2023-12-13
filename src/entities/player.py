@@ -4,7 +4,7 @@ from .entity import Entity
 class Player(Entity):
     id: int
 
-    userId: str
+    userId: int
 
     username: str
 

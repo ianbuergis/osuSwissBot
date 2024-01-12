@@ -114,7 +114,7 @@ class SkinCommands(commands.Cog):
         osuUser.skin = skin.id
         osuUser.skinName = skinName
         self.om.flush()
-        await ctx.respond('skin added!')
+        await ctx.respond('added the skin "' + skinName + '" to ' + osuUser.username)
 
     @commandGroup.command(description="remove a skin from a player")
     async def remove(
@@ -143,4 +143,4 @@ class SkinCommands(commands.Cog):
         osuUser.skinName = None
 
         self.om.flush()
-        await ctx.respond('Skin removed!')
+        await ctx.respond('Skin removed for ' + osuUser.username)

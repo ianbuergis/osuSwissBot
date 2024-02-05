@@ -200,8 +200,8 @@ class OsuHandler:
         for osuUser in osuUsers:
             await self.processRecentUserScores(bot, osuUser, mode)
 
-    async def updateUsers(self):
-        usersFromApi: list[UserStatistics] = await self.getUsersFromAPI(2, GameMode.OSU, 'ch')
+    async def updateUsers(self, gamemode: GameMode):
+        usersFromApi: list[UserStatistics] = await self.getUsersFromAPI(2, gamemode, 'ch')
 
         currentRank = 0
         for userFromApi in usersFromApi:

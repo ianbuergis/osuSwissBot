@@ -26,7 +26,7 @@ class Automation(commands.Cog):
     @tasks.loop(hours=12)
     async def updateUsers(self):
         print(f"[{datetime.now()}]", 'updating users...')
-        await self.__osuHandler.updateUsers()
+        await self.__osuHandler.updateUsers(gamemode=GameMode.OSU)
         if not self.__usersUpdated:
             self.getScores.start()
             self.__usersUpdated = True

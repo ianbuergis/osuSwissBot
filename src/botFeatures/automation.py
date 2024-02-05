@@ -35,6 +35,7 @@ class Automation(commands.Cog):
     # @tasks.loop(hours=12)
     # uncomment when the feature is actually implemented. which won't be for a while.
     # for now, we can keep the function around though
+
     async def updateTaikoUsers(self):
         print(f"[{datetime.now()}]", 'updating taiko users...')
         await self.__osuHandler.updateUsers(gamemode=GameMode.TAIKO)

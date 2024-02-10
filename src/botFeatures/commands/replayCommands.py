@@ -48,7 +48,7 @@ class ReplayCommands(commands.Cog):
             title = open(f'data/output/{scoreid}Title', 'r').read().replace('#star#', '⭐')
 
             await channel.send(f'{error}title:\n```{title}```\ndescription:\n```{description}```', files=files)
-            cleanup(scoreid)
+            await cleanup(scoreid)
 
     @commands.slash_command(description="Render a thumbnail with a replay file")
     async def preparereplayfromfile(
@@ -68,4 +68,4 @@ class ReplayCommands(commands.Cog):
         title = open(f'data/output/{score.best_id}Title', 'r').read().replace('#star#', '⭐')
 
         await channel.send(f'title:\n```{title}```\ndescription:\n```{description}```', files=files)
-        cleanup(score.best_id)
+        await cleanup(score.best_id)

@@ -5,7 +5,8 @@ import requests
 
 
 def calculateScoreViaApi(
-        mapId: int, *,
+        mapId: int,
+        *,
         s100: int = 0,
         s50: int = 0,
         miss: int = 0,
